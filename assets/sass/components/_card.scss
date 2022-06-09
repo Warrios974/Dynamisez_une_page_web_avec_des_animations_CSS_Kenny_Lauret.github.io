@@ -4,7 +4,7 @@
     border-radius: 20px;
     overflow: hidden;
     margin-bottom: 1.5rem;
-    box-shadow: 0.1em 10px 20px map-get($map: $colors, $key: color-shadow);
+    box-shadow: 0.1em 10px 20px lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
     &__image{
         position: relative;
         > img{
@@ -12,14 +12,19 @@
             width: 100%;
             height: 170px;
         }
-        > span{
-            position: absolute;
-            right: 1rem;
-            top: 1rem;
-            background-color: map-get($map: $colors, $key: color-new);
-            color: darken($color: map-get($map: $colors, $key: color-new), $amount: 40%);
-            padding: 0.5em 0.8rem;
-            font-size: map-get($map: $font_size, $key: legends);
+        &__info{
+            &--visible{
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                background-color: map-get($map: $colors, $key: color-new);
+                color: darken($color: map-get($map: $colors, $key: color-new), $amount: 40%);
+                padding: 0.5em 0.8rem;
+                font-size: map-get($map: $font_size, $key: legends);
+            }
+            &--invisible{
+                display: none
+            }
         }
     }
     &__description{
@@ -32,8 +37,6 @@
         }
         &__icon{
             font-size: map-get($map: $font_size, $key: headers);
-            --fa-primary-color: darkgreen;
-            --fa-secondary-color: silver;
         }
     }
 }

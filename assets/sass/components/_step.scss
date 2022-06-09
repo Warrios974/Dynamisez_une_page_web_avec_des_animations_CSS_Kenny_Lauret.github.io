@@ -17,17 +17,17 @@
     &__contain{
         width: 75%;
         padding: 1.5rem;
-        box-shadow: 0.1em 10px 20px map-get($map: $colors, $key: color-shadow);
+        box-shadow: 0.1em 10px 20px lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
         border-radius: 1em;
         margin-left: -10px;
         font-size: map-get($map: $font_size, $key: legends);
         > i{
             margin-left: 0.5em;
             font-size: map-get($map: $font_size, $key: icons);
-            color: map-get($map: $colors, $key: color-icons);
+            color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 40);
         }
         > span{
-            margin-left: 2em;
+            margin-left: 5%;
         }
     }
 }
