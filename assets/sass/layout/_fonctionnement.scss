@@ -1,0 +1,8 @@
+.fonctionnement{
+    text-align: left;
+    @include padding;
+    &__contain{
+        @include flex(column);
+        justify-content: center;
+    }
+}

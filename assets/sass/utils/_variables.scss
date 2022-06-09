@@ -1,0 +1,26 @@
+$max-pourcent : 100%;
+
+$colors :(
+    color-primary: #9356DC,
+    color-secondary: #FF79DA,
+    color-tertiary: #99E2D0,
+    color-icons: rgb(165, 165, 165),
+    color-new: rgb(166, 239, 166),
+    color-shadow: rgba(196, 196, 196,0.5),
+    color-white: #fff,
+    color-gray: rgb(57, 57, 57),
+);
+
+$font_size :(
+    logo: 2em,
+    icons: 1.5em,
+    headers: 1.4em,
+    paragraphes: 1.1em,
+    legends: 0.8em,
+);
+
+$button-style:(
+    &--pink:(
+
+    ),
+);

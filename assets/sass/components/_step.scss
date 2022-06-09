@@ -1,0 +1,33 @@
+.step{
+    @include flex(row);
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    &__number{
+        text-align: center;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 100%;
+        background-color: map-get($map: $colors, $key: color-primary);
+        color: map-get($map: $colors, $key: color-white);
+        line-height: 1.5em;
+        z-index: 1;
+    }
+    &__contain{
+        width: 75%;
+        padding: 1.5rem;
+        box-shadow: 0.1em 10px 20px map-get($map: $colors, $key: color-shadow);
+        border-radius: 1em;
+        margin-left: -10px;
+        font-size: map-get($map: $font_size, $key: legends);
+        > i{
+            margin-left: 0.5em;
+            font-size: map-get($map: $font_size, $key: icons);
+            color: map-get($map: $colors, $key: color-icons);
+        }
+        > span{
+            margin-left: 2em;
+        }
+    }
+}
