@@ -1,11 +1,11 @@
 @import "./utils/variables.scss";
 @import "./utils/mixin.scss";
-@import "./pages/global.scss";
+@import "./base/global.scss";
 @import "./layout/header.scss";
-@import "./layout/recherche.scss";
+@import "./pages/recherche.scss";
 @import "./components/button.scss";
-@import "./layout/fonctionnement.scss";
+@import "./pages/fonctionnement.scss";
 @import "./components/step.scss";
 @import "./components/card.scss";
-@import "./layout/restaurant.scss";
+@import "./pages/restaurant.scss";
 @import "./layout/footer.scss";

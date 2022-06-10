@@ -9,15 +9,15 @@
     padding: 2rem 1.2rem;
 }
 
-@mixin button {
-    background-color: map-get($map: $colors, $key: color-primary);
-    color: map-get($map: $colors, $key: color-white);
-    font-size: map-get($map: $font-size, $key: paragraphes);
-    padding: .7rem;
-    border-radius: 15px;
-    text-decoration: none;
+@mixin gradient_button {
+    background: rgb(255,121,218);
+    background: linear-gradient(180deg, rgba(255,121,218,1) 1%, rgba(147,86,220,1) 93%);
 }
 
-@mixin border($color) {
-    border: 0.2rem solid map-get($map: $colors, $key: $color);
+@mixin button {
+    color: map-get($map: $colors, $key: color-white);
+    font-size: map-get($map: $font-size, $key: paragraphes);
+    padding: 1.2rem;
+    border: none;
+    border-radius: 2rem;
 }
