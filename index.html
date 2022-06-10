@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/prefixed/style.css">
         <!-- Mis en place du fichier normalize.css pour ameliorer la compatibilité des navigateurs-->
         <link rel="stylesheet" href="./assets/css/normalize.css">
         <!-- Integration de l'outil FontAwesome | Pour l'utilisation d'icons qu'on peut personnaliser-->
@@ -24,8 +24,11 @@
         <main>
             <section class="recherche">
                 <form class="recherche__form">
-                    <input class="recherche__form__input" type="text" name="Ville" id="" placeholder="&#xf601; Paris, Belleville">
-                    <div>
+                    <div class="recherche__form__input">
+                        <label for="ville" class="fa-solid fa-location-dot"></label>
+                        <input class="" type="text" name="Ville" id="ville" placeholder="Paris, Belleville">
+                    </div>
+                    <div class="recherche__form__description">
                         <h1 class="recherche__form__titre">Réservez le menu qui vous convient</h1>
                         <p>
                             Découvrez des restaurants d'exception, séléctionnés par nos soins.

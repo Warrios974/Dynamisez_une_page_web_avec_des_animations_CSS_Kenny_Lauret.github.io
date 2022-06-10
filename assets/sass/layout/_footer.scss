@@ -8,7 +8,7 @@
         font-size: map-get($font_size, paragraphes);
     }
     &__list{
-        padding: 0;
+        padding: 10px;
         > li{
             padding: 0.2rem;
             > a{

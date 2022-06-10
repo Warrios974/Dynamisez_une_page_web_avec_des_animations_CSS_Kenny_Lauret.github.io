@@ -2,19 +2,22 @@
     background-color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 75);
     padding-bottom: 3rem;
     &__form{
-        > div{
+        &__description{
             @include padding;
         }
         &__input{
-            text-align: center;
+            @include flex(row);
+            justify-content: center;
             width: 100%;
-            height: 3em;
-            &::placeholder{
-                color: map-get($map: $colors, $key: color-gray);
-            }
+            height: 3rem;
             box-shadow: inset 0 0.1em 10px lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
-            border: 0;
             background-color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 70);
+            > input{
+                background-color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 70);
+                border: 0;
+                text-align: center;
+                width: 40%;
+            }
         }
         &__titre{
             font-size: map-get($map: $font_size, $key: headers);
