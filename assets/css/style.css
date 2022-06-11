@@ -1,3 +1,11 @@
+@keyframes hearst {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   padding: 0;
@@ -18,25 +26,16 @@ li {
 .header {
   position: relative;
 }
-.header > h1 {
+.header__logo {
+  height: 2rem;
   margin: 0;
-  padding: 1rem 0.2rem 0.5rem 0.2rem;
+  padding: 1.5rem 0.2rem 0.6rem 0.2rem;
 }
 .header__icon {
   position: absolute;
   left: 1.5rem;
   top: 1.2rem;
   font-size: 1.5em;
-}
-.header__icon--visible {
-  display: inline;
-}
-.header__icon--invisible {
-  display: none;
-}
-.header__title {
-  font-family: "Shrikhand", cursive;
-  font-size: 2em;
 }
 
 .recherche {
@@ -62,6 +61,9 @@ li {
   border: 0;
   text-align: center;
   width: 40%;
+}
+.recherche__form__input > input:focus {
+  outline: none;
 }
 .recherche__form__titre {
   font-size: 1.4em;
@@ -131,6 +133,7 @@ li {
 }
 
 .card {
+  background-color: #fff;
   width: 100%;
   height: 250px;
   border-radius: 20px;
@@ -146,7 +149,7 @@ li {
   width: 100%;
   height: 170px;
 }
-.card__image__info--visible {
+.card__image__info {
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -154,9 +157,6 @@ li {
   color: #278870;
   padding: 0.5em 0.8rem;
   font-size: 0.8em;
-}
-.card__image__info--invisible {
-  display: none;
 }
 .card__description {
   display: flex;
@@ -171,7 +171,24 @@ li {
   font-size: 1.1em;
 }
 .card__description__icon {
+  width: 25px;
+  height: 25px;
+  position: relative;
   font-size: 1.4em;
+  z-index: 1;
+}
+.card__description__icon > i {
+  position: absolute;
+  background-color: #fff;
+}
+.card__description__icon > i:first-child {
+  z-index: 1;
+}
+.card__description__icon > i:first-child:hover {
+  animation: hearst 400ms both;
+}
+.card__description__icon > i:last-child {
+  color: #9356DC;
 }
 
 .restaurant {
@@ -193,12 +210,12 @@ li {
   background-color: rgb(57, 57, 57);
   padding: 2rem 1.2rem;
 }
-.footer__title {
+.footer__logo {
   font-family: "Shrikhand", cursive;
   font-size: 1.1em;
 }
 .footer__list {
-  padding: 10px;
+  padding: 0;
 }
 .footer__list > li {
   padding: 0.2rem;

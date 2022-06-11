@@ -17,6 +17,9 @@
                 border: 0;
                 text-align: center;
                 width: 40%;
+                &:focus{
+                    outline: none;
+                }
             }
         }
         &__titre{

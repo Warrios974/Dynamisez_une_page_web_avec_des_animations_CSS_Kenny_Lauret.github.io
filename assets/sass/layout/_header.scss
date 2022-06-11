@@ -1,23 +1,14 @@
 .header{
     position: relative;
-    > h1{
+    &__logo{
+        height: 2rem;
         margin: 0;
-        padding: 1rem 0.2rem 0.5rem 0.2rem;
+        padding: 1.5rem 0.2rem 0.6rem 0.2rem;
     }
     &__icon{
         position: absolute;
         left: 1.5rem;
         top: 1.2rem;
         font-size: map-get($map: $font_size, $key: icons);
-        &--visible{
-            display: inline;
-        }
-        &--invisible{
-            display: none;
-        }
-    }
-    &__title{
-        font-family: 'Shrikhand', cursive;
-        font-size: map-get($font_size, logo);
     }
 }
