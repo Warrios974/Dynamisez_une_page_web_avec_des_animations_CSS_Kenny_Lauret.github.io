@@ -1,7 +1,7 @@
 .restaurant{
     background-color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 75);
     text-align: left;
-    @include padding;
+    @include padding_body;
     &__contain{
         @include flex(column);
         justify-content: center;

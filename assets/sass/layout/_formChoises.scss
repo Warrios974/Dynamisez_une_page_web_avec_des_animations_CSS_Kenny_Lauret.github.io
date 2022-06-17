@@ -1,0 +1,21 @@
+.formChoises{
+    background-color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 75);
+    text-align: left;
+    @include padding_body;
+    margin-top: -3rem;
+    border-radius: 3em 3em 0 0;
+    > h1{
+        font-family: 'Shrikhand', cursive;
+        font-size: map-get($font_size, headers);
+        margin: 0;
+    }
+    &__diner{
+        @include margin_BotTop(2rem);
+        > span{
+            display: block;
+            text-transform: uppercase;
+            font-size: map-get($font_size, paragraphes);
+            color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
+        }
+    }
+}

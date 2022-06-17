@@ -1,6 +1,6 @@
 .fonctionnement{
     text-align: left;
-    @include padding;
+    @include padding_body;
     &__contain{
         @include flex(column);
         justify-content: center;

@@ -5,8 +5,12 @@
     align-items: center;
 }
 
-@mixin padding {
+@mixin padding_body {
     padding: 2rem 1.2rem;
+}
+
+@mixin margin_BotTop($value) {
+    margin: $value 0;
 }
 
 @mixin gradient_button {
@@ -15,9 +19,13 @@
 }
 
 @mixin button {
-    color: map-get($map: $colors, $key: color-white);
-    font-size: map-get($map: $font-size, $key: paragraphes);
     padding: 1.2rem;
     border: none;
     border-radius: 2rem;
+}
+
+@mixin choise {
+    padding: 1.2rem;
+    border: none;
+    border-radius: 1rem;
 }

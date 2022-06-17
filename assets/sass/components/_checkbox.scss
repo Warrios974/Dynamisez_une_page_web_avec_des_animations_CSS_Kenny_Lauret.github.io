@@ -1,0 +1,22 @@
+.checkbox{
+    @include choise;
+    background-color: map-get($map: $colors, $key: color-white);
+    @include flex(row);
+    @include margin_BotTop(1rem);
+    justify-content: space-between;
+    &__label{
+        @include flex(column);
+        align-items: flex-start;
+        > label{
+            font-weight: bold;
+        }
+        > span{
+            font-size: map-get($map: $font_size, $key: legends);
+            @include margin_BotTop(0.3rem);
+        }
+    }
+    > input{
+        height: 100%;
+        background-color: map-get($map: $colors, $key: color-tertiary);
+    }
+}

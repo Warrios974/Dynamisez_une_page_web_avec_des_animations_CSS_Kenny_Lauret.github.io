@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/assets/css/prefixed/style.css">
+        <!-- Mis en place du fichier normalize.css pour ameliorer la compatibilité des navigateurs-->
+        <link rel="stylesheet" href="/assets/css/normalize.css">
+        <!-- Integration de l'outil FontAwesome | Pour l'utilisation d'icons qu'on peut personnaliser-->
+        <script src="https://kit.fontawesome.com/628563ac53.js" crossorigin="anonymous"></script>
+        <!-- Integration de la police avec google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Shrikhand&display=swap" rel="stylesheet">
+        <!-- Titre du site -->
+        <title>ohmyfood</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="/index.html" class="header__icon header__icon--invisible"><i class="fa-solid fa-arrow-left"></i></a>
+            <img class="header__logo" src="/assets/img/logo/ohmyfood.png" alt="logo ohmayfood">
+        </header>
+        <main>
+            <section class="choices">
+                <div class="choices__image">
+                </div>
+                <form class="formChoises">
+                    <h1>La palette du goût</h1>
+                    <div class="formChoises__diner">
+                        <span>Entrées</span>
+                        <div class="checkbox">
+                            <div class="checkbox__label">
+                                <label for="entree_1">Fricassée d'escargot</label>
+                                <span>Au piment d'espelette</span>
+                            </div>
+                            <input type="checkbox" name="entree_1" value="1" id="entree_1">
+                            <span>25€</span>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer class="footer">
+            <span class="footer__logo">ohmyfood</span>
+            <ul class="footer__list">
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-utensils"></i> Proposer un restaurant
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-handshake-angle"></i> Devenir partenaire
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Mention légales
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:@gmail.com">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
