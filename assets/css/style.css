@@ -6,6 +6,24 @@
     opacity: 0;
   }
 }
+@keyframes checkbox {
+  from {
+    transform: scaleX(0);
+    width: 0%;
+  }
+  to {
+    transform: scaleX(1);
+    width: 15%;
+  }
+}
+@keyframes label {
+  from {
+    width: 95%;
+  }
+  to {
+    width: 80%;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   padding: 0;
@@ -141,6 +159,13 @@ li {
 .formChoises__diner {
   margin: 2rem 0;
 }
+.formChoises__diner > hr {
+  height: 0.3rem;
+  width: 3rem;
+  background-color: #99E2D0;
+  border: none;
+  margin: 0.5rem 0;
+}
 .formChoises__diner > span {
   display: block;
   text-transform: uppercase;
@@ -257,7 +282,6 @@ li {
 }
 
 .checkbox {
-  padding: 1.2rem;
   border: none;
   border-radius: 1rem;
   background-color: #fff;
@@ -265,26 +289,80 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  margin: 1rem 0;
   justify-content: space-between;
+  align-items: stretch;
+  margin: 1rem 0;
+  position: relative;
 }
 .checkbox__label {
+  width: 95%;
+}
+.checkbox__label > label {
+  padding: 0.7rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   align-items: flex-start;
+  justify-content: space-between;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
 }
-.checkbox__label > label {
+.checkbox__label > label > span:first-child {
   font-weight: bold;
+  width: 100%;
 }
-.checkbox__label > span {
+.checkbox__label > label > span:nth-child(2) {
   font-size: 0.8em;
   margin: 0.3rem 0;
 }
-.checkbox > input {
-  height: 100%;
+.checkbox__label > label > span:last-child {
+  font-weight: bold;
+}
+.checkbox__label:hover {
+  animation: label 200ms;
+  transform-origin: left;
+  animation-fill-mode: forwards;
+}
+.checkbox__label:hover + div {
+  animation: checkbox 200ms;
+  transform-origin: right;
+  animation-fill-mode: forwards;
+}
+.checkbox__select {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+  width: 0;
+  transform: scaleX(0);
+  border-radius: 0 1rem 1rem 0;
   background-color: #99E2D0;
+}
+.checkbox__select > input[type=checkbox] {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.checkbox__select > input[type=checkbox]:checked {
+  position: relative;
+  padding: 0.16rem;
+}
+.checkbox__select > input[type=checkbox]:checked::after {
+  position: absolute;
+  font-family: FontAwesome;
+  content: "\f00c";
+  font-weight: 900;
+  display: block;
+  color: #99E2D0;
+  font-size: 1.1em;
+  position: absolute;
 }
 
 /*# sourceMappingURL=style.css.map */

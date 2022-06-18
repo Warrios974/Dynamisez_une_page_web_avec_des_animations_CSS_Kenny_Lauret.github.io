@@ -2,21 +2,69 @@
     @include choise;
     background-color: map-get($map: $colors, $key: color-white);
     @include flex(row);
-    @include margin_BotTop(1rem);
     justify-content: space-between;
+    align-items: stretch;
+    @include margin_BotTop(1rem);
+    position: relative;
     &__label{
-        @include flex(column);
-        align-items: flex-start;
+        width: 95%;
         > label{
-            font-weight: bold;
+            padding: 0.7rem;
+            @include flex(row);
+            align-items: flex-start;
+            justify-content: space-between;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+            > span{
+                &:first-child{
+                    font-weight: bold;
+                    width: 100%;
+                }
+                &:nth-child(2){
+                    font-size: map-get($map: $font_size, $key: legends);
+                    @include margin_BotTop(0.3rem);
+                }
+                &:last-child{
+                    font-weight: bold;
+                }
+            }
         }
-        > span{
-            font-size: map-get($map: $font_size, $key: legends);
-            @include margin_BotTop(0.3rem);
+        &:hover{
+            @include animation(label, 200ms, left);
+        }
+        &:hover + div{
+            @include animation(checkbox, 200ms, right);
         }
     }
-    > input{
-        height: 100%;
+    &__select{
+        @include flex(row);
+        align-items: center;
+        justify-content: center;
+        box-sizing: content-box;
+        width: 0;
+        transform: scaleX(0);
+        border-radius: 0 $border_radius_choises $border_radius_choises 0;
         background-color: map-get($map: $colors, $key: color-tertiary);
+        > input[type="checkbox"]{
+            appearance: none;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 100%;background-color: map-get($map: $colors, $key: color-white);
+            &:checked {
+                position: relative;
+                padding: 0.16rem;
+                &::after {
+                    position: absolute;
+                    font-family: FontAwesome;
+                    content: '\f00c'; 
+                    font-weight: 900;
+                    display: block;
+                    color: map-get($map: $colors, $key: color-tertiary);
+                    font-size: map-get($font_size, paragraphes);
+                    position: absolute;
+                }
+            }
+        }
     }
 }

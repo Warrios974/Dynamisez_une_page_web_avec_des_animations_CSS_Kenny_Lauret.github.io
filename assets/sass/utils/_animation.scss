@@ -6,3 +6,24 @@
         opacity: 0;
     }
 }
+
+@keyframes checkbox {
+    from{
+        transform: scaleX(0);
+        width: 0%;
+    }
+    to{
+        transform: scaleX(1);
+        width: 15%;
+    }
+}
+
+@keyframes label {
+    from{
+        width: 95%;
+    }
+    to{
+        width: 80%;
+    }
+}
+

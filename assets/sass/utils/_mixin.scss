@@ -25,7 +25,12 @@
 }
 
 @mixin choise {
-    padding: 1.2rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: $border_radius_choises;
+}
+
+@mixin animation($nameAnimation, $time, $direction) {
+    animation: $nameAnimation $time;
+    transform-origin: $direction;
+    animation-fill-mode: forwards;
 }

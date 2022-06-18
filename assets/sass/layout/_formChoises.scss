@@ -11,6 +11,13 @@
     }
     &__diner{
         @include margin_BotTop(2rem);
+        > hr{
+            height: 0.3rem;
+            width: 3rem;
+            background-color: map-get($map: $colors, $key: color-tertiary);
+            border: none;
+            margin: 0.5rem 0;
+        }
         > span{
             display: block;
             text-transform: uppercase;
