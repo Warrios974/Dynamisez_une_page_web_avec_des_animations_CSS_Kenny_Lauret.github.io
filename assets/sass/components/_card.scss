@@ -24,32 +24,12 @@
         }
     }
     &__description{
-        @include flex(row);
+        @include flex(row,wrap);
         margin: 0 1.5rem 0 0.8rem;
         justify-content: space-between;
         &__title{
             margin: 0.5rem 0;
             font-size: map-get($map: $font_size, $key: paragraphes);
-        }
-        &__icon{
-            width: 25px;
-            height: 25px;
-            position: relative;
-            font-size: map-get($map: $font_size, $key: headers);
-            z-index: 1;
-            > i{
-                position: absolute;
-                background-color: map-get($map: $colors, $key: color-white);
-                &:first-child{
-                    z-index: 1;
-                    &:hover{
-                        animation: hearst 400ms both;
-                    }
-                }
-                &:last-child{
-                    color: map-get($map: $colors, $key: color-primary);
-                }
-            }
         }
     }
 }
