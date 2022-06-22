@@ -1,5 +1,5 @@
 .step{
-    @include flex(row);
+    @include flex(row,wrap);
     box-sizing: border-box;
     justify-content: center;
     width: 100%;
@@ -13,13 +13,15 @@
         color: map-get($map: $colors, $key: color-white);
         font-size: map-get($map: $font_size, $key: legends);
         line-height: 1.5em;
-        z-index: 1;
+        z-index: 2;
     }
     &__contain{
+        position: relative;
+        z-index: 1;
         width: 75%;
         padding: 1.5rem;
         box-shadow: 0.1em 10px 20px lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
-        border-radius: 1em;
+        @include choise;
         margin-left: -10px;
         font-size: map-get($map: $font_size, $key: legends);
         > i{
@@ -29,6 +31,24 @@
         }
         > span{
             margin-left: 5%;
+        }
+        &:hover{
+            &::after{
+                opacity: 1;
+            }
+        }
+        &::after{
+            @include choise;
+            content: "";
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: lighten($color: map-get($map: $colors, $key: color-primary), $amount: 35);
+            z-index: -1;
+            transition: opacity 250ms;
         }
     }
 }

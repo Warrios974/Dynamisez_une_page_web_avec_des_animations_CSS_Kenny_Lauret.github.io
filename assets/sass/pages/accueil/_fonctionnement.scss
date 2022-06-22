@@ -2,7 +2,7 @@
     text-align: left;
     @include padding_body;
     &__contain{
-        @include flex(column);
+        @include flex(column,wrap);
         justify-content: center;
     }
 }
