@@ -4,13 +4,18 @@
     @include padding_body;
     margin-top: -3rem;
     border-radius: 3em 3em 0 0;
-    > h1{
-        font-family: 'Shrikhand', cursive;
-        font-size: map-get($font_size, headers);
-        margin: 0;
+    text-align: center;
+    &__header{
+        @include flex(row,wrap);
+        justify-content: space-between;
+        > h1{
+            font-family: 'Shrikhand', cursive;
+            font-size: map-get($font_size, headers);
+            margin: 0;
+        }
     }
     &__diner{
-        @include margin_BotTop(2rem);
+        @include margin_BotTop(3rem);
         > hr{
             height: 0.3rem;
             width: 3rem;
@@ -19,10 +24,14 @@
             margin: 0.5rem 0;
         }
         > span{
+            text-align: left;
+            font-weight: 100;
             display: block;
             text-transform: uppercase;
             font-size: map-get($font_size, paragraphes);
-            color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
         }
+    }
+    > button{
+        margin-bottom: 2rem;
     }
 }

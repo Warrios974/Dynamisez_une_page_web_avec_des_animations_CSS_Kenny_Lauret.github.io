@@ -1,58 +1,61 @@
 .checkbox{
+    @include flex(row,nowrap);
+    overflow: hidden;
+    background-color: map-get($map: $colors, $key: color-tertiary);
     @include choise;
-    background-color: map-get($map: $colors, $key: color-white);
-    @include flex(row);
-    justify-content: space-between;
-    align-items: stretch;
     @include margin_BotTop(1rem);
-    position: relative;
+    animation: choise $time_animation 3s ease-in-out both;
+    @for $i from 1 through $nombre_choise {
+        &--#{$i} {
+            animation-delay: 3s + (100ms * $i);
+         }
+    }
     &__label{
-        width: 95%;
-        > label{
-            padding: 0.7rem;
-            @include flex(row);
-            align-items: flex-start;
-            justify-content: space-between;
-            text-overflow: ellipsis;
+        width: 100%;
+        z-index: 1;
+        background-color: map-get($map: $colors, $key: color-white);
+        box-sizing: content-box;
+        padding: 0.7rem;    
+        @include flex(row,nowrap);
+        align-items: flex-end;
+        justify-content: space-between;
+        overflow: hidden;
+        cursor: pointer;
+        &__header{
+            text-align: left;
+            box-sizing: content-box;
             overflow: hidden;
-            cursor: pointer;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
             > span{
                 &:first-child{
                     font-weight: bold;
-                    width: 100%;
-                }
-                &:nth-child(2){
-                    font-size: map-get($map: $font_size, $key: legends);
-                    @include margin_BotTop(0.3rem);
                 }
                 &:last-child{
-                    font-weight: bold;
+                    font-size: map-get($map: $font_size, $key: legends);
                 }
             }
         }
-        &:hover{
-            @include animation(label, 200ms, left);
-        }
-        &:hover + div{
-            @include animation(checkbox, 200ms, right);
+        &__price{
+            box-sizing: content-box;
+            font-weight: bold;
+            padding-right: 0.5rem;
         }
     }
     &__select{
-        @include flex(row);
-        align-items: center;
-        justify-content: center;
+        text-align: center;
+        line-height: .5rem;
         box-sizing: content-box;
-        width: 0;
-        transform: scaleX(0);
-        border-radius: 0 $border_radius_choises $border_radius_choises 0;
-        background-color: map-get($map: $colors, $key: color-tertiary);
         > input[type="checkbox"]{
+            cursor: pointer;
             appearance: none;
             width: 1.5rem;
             height: 1.5rem;
-            border-radius: 100%;background-color: map-get($map: $colors, $key: color-white);
+            border-radius: 100%;
+            background-color: map-get($map: $colors, $key: color-white);
+            cursor: pointer;
             &:checked {
-                position: relative;
                 padding: 0.16rem;
                 &::after {
                     position: absolute;
@@ -62,9 +65,14 @@
                     display: block;
                     color: map-get($map: $colors, $key: color-tertiary);
                     font-size: map-get($font_size, paragraphes);
-                    position: absolute;
                 }
             }
         }
+    }
+    &:hover > .checkbox__select{
+        animation: checkbox 400ms both;
+    }
+    &:not(:hover) > .checkbox__select{
+        animation: checkboxReturn 400ms both;
     }
 }
