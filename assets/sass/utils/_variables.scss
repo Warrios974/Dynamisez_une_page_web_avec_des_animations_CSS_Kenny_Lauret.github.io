@@ -1,4 +1,7 @@
-$border_radius_choises : 1rem;
+$border_radius:(
+    choises : 1rem,
+    button : 2rem,
+);
 
 $colors :(
     color-primary: #9356DC,
@@ -15,3 +18,12 @@ $font_size :(
     paragraphes: 1.1em,
     legends: 0.8em,
 );
+
+$nombre_choise: 3;
+$nombre_letter : 8;
+$time_animation : 600ms;
+
+/*
+$cursors :(
+    pointer
+);*/
