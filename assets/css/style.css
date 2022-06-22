@@ -1,30 +1,65 @@
-@keyframes hearst {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
+/*
+$cursors :(
+    pointer
+);*/
 @keyframes checkbox {
   from {
-    transform: scaleX(0);
-    width: 0%;
+    transform: translateX(2rem) rotate(0);
+    width: 0;
   }
   to {
-    transform: scaleX(1);
-    width: 15%;
+    transform: translateX(0) rotate(360deg);
+    width: 4rem;
   }
 }
-@keyframes label {
+@keyframes checkboxReturn {
   from {
-    width: 95%;
+    transform: translateX(0);
+    width: 4rem;
+  }
+  to {
+    transform: translateX(4rem);
+    width: 0;
+    display: none;
+  }
+}
+@keyframes labelanime {
+  from {
+    width: 100%;
   }
   to {
     width: 80%;
   }
 }
+@keyframes logo {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+@keyframes extinction {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -999;
+  }
+}
+@keyframes choise {
+  0% {
+    opacity: 0;
+    transform: translateY(5vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0vh);
+  }
+}
 body {
+  position: relative;
   font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0 1em;
@@ -39,6 +74,10 @@ a {
 
 li {
   list-style: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 .fonctionnement {
@@ -73,7 +112,7 @@ li {
 
 .choices__image {
   height: 17rem;
-  background: url(/assets/img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  background: url(../../img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
   background-size: cover;
 }
 
@@ -150,14 +189,22 @@ li {
   padding: 2rem 1.2rem;
   margin-top: -3rem;
   border-radius: 3em 3em 0 0;
+  text-align: center;
 }
-.formChoises > h1 {
+.formChoises__header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.formChoises__header > h1 {
   font-family: "Shrikhand", cursive;
   font-size: 1.4em;
   margin: 0;
 }
 .formChoises__diner {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 .formChoises__diner > hr {
   height: 0.3rem;
@@ -167,13 +214,19 @@ li {
   margin: 0.5rem 0;
 }
 .formChoises__diner > span {
+  text-align: left;
+  font-weight: 100;
   display: block;
   text-transform: uppercase;
   font-size: 1.1em;
-  color: #b9b9b9;
+}
+.formChoises > button {
+  margin-bottom: 2rem;
 }
 
 .button {
+  overflow: hidden;
+  position: relative;
   padding: 1.2rem;
   border: none;
   border-radius: 2rem;
@@ -182,6 +235,24 @@ li {
   background: rgb(255, 121, 218);
   background: linear-gradient(180deg, rgb(255, 121, 218) 1%, rgb(147, 86, 220) 93%);
   color: #fff;
+  width: 15rem;
+}
+.button--primary:hover::after {
+  opacity: 1;
+}
+.button--primary::after {
+  border: none;
+  border-radius: 1rem;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f2eafb;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 
 .step {
@@ -203,13 +274,16 @@ li {
   color: #fff;
   font-size: 0.8em;
   line-height: 1.5em;
-  z-index: 1;
+  z-index: 2;
 }
 .step__contain {
+  position: relative;
+  z-index: 1;
   width: 75%;
   padding: 1.5rem;
   box-shadow: 0.1em 10px 20px #b9b9b9;
-  border-radius: 1em;
+  border: none;
+  border-radius: 1rem;
   margin-left: -10px;
   font-size: 0.8em;
 }
@@ -220,6 +294,23 @@ li {
 }
 .step__contain > span {
   margin-left: 5%;
+}
+.step__contain:hover::after {
+  opacity: 1;
+}
+.step__contain::after {
+  border: none;
+  border-radius: 1rem;
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f2eafb;
+  z-index: -1;
+  transition: opacity 250ms;
 }
 
 .card {
@@ -260,98 +351,77 @@ li {
   margin: 0.5rem 0;
   font-size: 1.1em;
 }
-.card__description__icon {
-  width: 25px;
-  height: 25px;
-  position: relative;
-  font-size: 1.4em;
-  z-index: 1;
-}
-.card__description__icon > i {
-  position: absolute;
-  background-color: #fff;
-}
-.card__description__icon > i:first-child {
-  z-index: 1;
-}
-.card__description__icon > i:first-child:hover {
-  animation: hearst 400ms both;
-}
-.card__description__icon > i:last-child {
-  color: #9356DC;
-}
 
 .checkbox {
-  border: none;
-  border-radius: 1rem;
-  background-color: #fff;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
-  align-items: stretch;
+  overflow: hidden;
+  background-color: #99E2D0;
+  border: none;
+  border-radius: 1rem;
   margin: 1rem 0;
-  position: relative;
+  animation: choise 600ms 3s ease-in-out both;
+}
+.checkbox--1 {
+  animation-delay: 3.1s;
+}
+.checkbox--2 {
+  animation-delay: 3.2s;
+}
+.checkbox--3 {
+  animation-delay: 3.3s;
 }
 .checkbox__label {
-  width: 95%;
-}
-.checkbox__label > label {
+  width: 100%;
+  z-index: 1;
+  background-color: #fff;
+  box-sizing: content-box;
   padding: 0.7rem;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
-  text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
 }
-.checkbox__label > label > span:first-child {
-  font-weight: bold;
-  width: 100%;
+.checkbox__label__header {
+  text-align: left;
+  box-sizing: content-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
 }
-.checkbox__label > label > span:nth-child(2) {
+.checkbox__label__header > span:first-child {
+  font-weight: bold;
+}
+.checkbox__label__header > span:last-child {
   font-size: 0.8em;
-  margin: 0.3rem 0;
 }
-.checkbox__label > label > span:last-child {
+.checkbox__label__price {
+  box-sizing: content-box;
   font-weight: bold;
-}
-.checkbox__label:hover {
-  animation: label 200ms;
-  transform-origin: left;
-  animation-fill-mode: forwards;
-}
-.checkbox__label:hover + div {
-  animation: checkbox 200ms;
-  transform-origin: right;
-  animation-fill-mode: forwards;
+  padding-right: 0.5rem;
 }
 .checkbox__select {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  line-height: 0.5rem;
   box-sizing: content-box;
-  width: 0;
-  transform: scaleX(0);
-  border-radius: 0 1rem 1rem 0;
-  background-color: #99E2D0;
 }
 .checkbox__select > input[type=checkbox] {
+  cursor: pointer;
   appearance: none;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 100%;
   background-color: #fff;
+  cursor: pointer;
 }
 .checkbox__select > input[type=checkbox]:checked {
-  position: relative;
   padding: 0.16rem;
 }
 .checkbox__select > input[type=checkbox]:checked::after {
@@ -362,7 +432,86 @@ li {
   display: block;
   color: #99E2D0;
   font-size: 1.1em;
+}
+.checkbox:hover > .checkbox__select {
+  animation: checkbox 400ms both;
+}
+.checkbox:not(:hover) > .checkbox__select {
+  animation: checkboxReturn 400ms both;
+}
+
+.hearst {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  font-size: 1.4em;
+  z-index: 1;
+}
+.hearst > i {
+  cursor: pointer;
   position: absolute;
+  background-color: #fff;
+}
+.hearst > i:first-child {
+  z-index: 1;
+  opacity: 1;
+  transition: all 200ms;
+}
+.hearst > i:first-child:hover {
+  opacity: 0;
+}
+.hearst > i:last-child {
+  color: #9356DC;
+}
+.hearst--restaurants {
+  margin-right: 1rem;
+}
+.hearst--restaurants > i {
+  background-color: #f8f8f8;
+}
+
+.loader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  position: fixed;
+  justify-content: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.4em;
+  width: 100%;
+  height: 960px;
+  background-color: #fff;
+  z-index: 9999;
+  animation: extinction 400ms 3s forwards;
+}
+.loader__letter {
+  margin: 0.5rem;
+  animation-direction: alternate-reverse;
+}
+.loader__letter--1 {
+  animation: logo 600ms 0.125s both infinite linear alternate;
+}
+.loader__letter--2 {
+  animation: logo 600ms 0.25s both infinite linear alternate;
+}
+.loader__letter--3 {
+  animation: logo 600ms 0.375s both infinite linear alternate;
+}
+.loader__letter--4 {
+  animation: logo 600ms 0.5s both infinite linear alternate;
+}
+.loader__letter--5 {
+  animation: logo 600ms 0.625s both infinite linear alternate;
+}
+.loader__letter--6 {
+  animation: logo 600ms 0.75s both infinite linear alternate;
+}
+.loader__letter--7 {
+  animation: logo 600ms 0.875s both infinite linear alternate;
+}
+.loader__letter--8 {
+  animation: logo 600ms 1s both infinite linear alternate;
 }
 
 /*# sourceMappingURL=style.css.map */
