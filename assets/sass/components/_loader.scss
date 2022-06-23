@@ -14,7 +14,7 @@
         animation-direction: alternate-reverse;
         @for $i from 1 through $nombre_letter {
             &--#{$i} {
-                animation: logo $time_animation (#{$i/8})+s both infinite linear alternate;
+                animation: logo $time_animation calc($i / 8)+s both infinite linear alternate;
              }
         }
     }
