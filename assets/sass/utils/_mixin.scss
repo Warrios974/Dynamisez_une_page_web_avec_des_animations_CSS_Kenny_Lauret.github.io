@@ -14,8 +14,8 @@
 }
 
 @mixin gradient_button {
-    background: rgb(255,121,218);
-    background: linear-gradient(180deg, rgba(255,121,218,1) 1%, rgba(147,86,220,1) 93%);
+    background: map-get($map: $colors, $key: color-secondary);
+    background: linear-gradient(180deg, map-get($map: $colors, $key: color-secondary) 1%, map-get($map: $colors, $key: color-primary) 93%);
 }
 
 @mixin button {
