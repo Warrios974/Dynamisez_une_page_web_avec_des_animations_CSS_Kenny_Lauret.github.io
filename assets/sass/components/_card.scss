@@ -6,6 +6,10 @@
     overflow: hidden;
     margin-bottom: 1.5rem;
     box-shadow: 0.1em 10px 20px lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
+    @media screen and (min-width:1200px) {
+        width: 46%;
+        margin: 0.5rem;
+    }
     &__image{
         position: relative;
         > img{

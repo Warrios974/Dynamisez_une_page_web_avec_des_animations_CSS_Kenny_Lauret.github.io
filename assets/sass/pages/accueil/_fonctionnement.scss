@@ -5,4 +5,7 @@
         @include flex(column,wrap);
         justify-content: center;
     }
+    @media screen and (min-width:768px) {
+        padding: 2rem 20%;
+    }
 }
