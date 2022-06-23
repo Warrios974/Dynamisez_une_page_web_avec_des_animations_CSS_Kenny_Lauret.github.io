@@ -2,9 +2,11 @@
     overflow: hidden;
     @include button;
     &--primary{
+        position: relative;
         @include gradient_button;
         color: map-get($map: $colors, $key: color-white);
         width: 15rem;
+        z-index: 1;
         &:hover{
             &::after{
                 opacity: 1;
@@ -19,7 +21,8 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: lighten($color: map-get($map: $colors, $key: color-primary), $amount: 35);
+            background: map-get($map: $colors, $key: color-secondary);
+            background: linear-gradient(180deg, lighten($color: map-get($map: $colors, $key: color-secondary), $amount: 5) 1%, lighten($color: map-get($map: $colors, $key: color-primary), $amount: 5) 93%);
             z-index: -1;
             transition: opacity 250ms;
         }
