@@ -6,6 +6,6 @@
         justify-content: center;
     }
     @media screen and (min-width:768px) {
-        padding: 2rem 20%;
+        @include responsiveBody;
     }
 }

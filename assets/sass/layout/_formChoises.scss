@@ -1,10 +1,14 @@
 .formChoises{
+    z-index: 1;
     background-color: lighten($color: map-get($map: $colors, $key: color-gray), $amount: 75);
     text-align: left;
     @include padding_body;
     margin-top: -3rem;
     border-radius: 3em 3em 0 0;
     text-align: center;
+    @media screen and (min-width:768px) {
+        @include responsiveBody;
+    }
     &__header{
         @include flex(row,wrap);
         justify-content: space-between;

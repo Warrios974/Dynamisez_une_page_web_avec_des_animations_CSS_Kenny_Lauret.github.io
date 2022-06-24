@@ -39,3 +39,7 @@
     opacity: 1;
     transition: all $time;
 }
+
+@mixin responsiveBody {
+    padding: 2rem 20%;
+}
