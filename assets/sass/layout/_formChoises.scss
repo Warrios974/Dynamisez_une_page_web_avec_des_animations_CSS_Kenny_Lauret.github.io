@@ -7,7 +7,7 @@
     border-radius: 3em 3em 0 0;
     text-align: center;
     @media screen and (min-width:768px) {
-        padding: map-get($map: $padding, $key: boby-responsive);
+        padding: map-get($map: $padding, $key: body-responsive);
     }
     &__header{
         @include flex(row,wrap);

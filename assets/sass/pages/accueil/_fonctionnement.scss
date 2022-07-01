@@ -6,6 +6,6 @@
         justify-content: center;
     }
     @media screen and (min-width:768px) {
-        padding: map-get($map: $padding, $key: boby-responsive);
+        padding: map-get($map: $padding, $key: body-responsive);
     }
 }
