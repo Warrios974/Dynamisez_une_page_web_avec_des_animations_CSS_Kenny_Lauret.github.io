@@ -43,3 +43,13 @@
 @mixin responsiveBody {
     padding: 2rem 20%;
 }
+
+@mixin afterCheckbox {
+    position: absolute;
+    font-family: FontAwesome;
+    content: '\f00c'; 
+    font-weight: 900;
+    display: block;
+    color: map-get($map: $colors, $key: color-tertiary);
+    font-size: map-get($font_size, paragraphes);
+}

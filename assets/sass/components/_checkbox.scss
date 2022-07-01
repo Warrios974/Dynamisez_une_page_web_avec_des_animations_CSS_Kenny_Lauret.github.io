@@ -58,13 +58,13 @@
             &:checked {
                 padding: 0.16rem;
                 &::after {
-                    position: absolute;
-                    font-family: FontAwesome;
-                    content: '\f00c'; 
-                    font-weight: 900;
-                    display: block;
-                    color: map-get($map: $colors, $key: color-tertiary);
-                    font-size: map-get($font_size, paragraphes);
+                    @include afterCheckbox;
+                }
+            }
+            &:not(:checked) {
+                padding: 0.16rem;
+                &::after {
+                    @include afterCheckbox;
                 }
             }
         }
