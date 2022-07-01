@@ -1,11 +1,11 @@
 .fonctionnement{
     text-align: left;
-    @include padding_body;
+    padding: map-get($map: $padding, $key: body);
     &__contain{
         @include flex(column,wrap);
         justify-content: center;
     }
     @media screen and (min-width:768px) {
-        @include responsiveBody;
+        padding: map-get($map: $padding, $key: boby-responsive);
     }
 }

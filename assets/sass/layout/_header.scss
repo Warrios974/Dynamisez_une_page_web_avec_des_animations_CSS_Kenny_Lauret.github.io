@@ -3,7 +3,7 @@
     &__logo{
         height: 2rem;
         margin: 0;
-        padding: 1.5rem 0.2rem 0.6rem 0.2rem;
+        padding: map-get($map: $padding, $key: header-logo);
     }
     &__icon{
         position: absolute;

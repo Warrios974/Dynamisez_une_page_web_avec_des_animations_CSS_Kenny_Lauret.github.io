@@ -2,7 +2,7 @@
     text-align: left;
     color: map-get($map: $colors, $key: color-white);
     background-color: map-get($map: $colors, $key: color-gray);
-    @include padding_body;
+    padding: map-get($map: $padding, $key: body);
     &__logo{
         font-family: 'Shrikhand', cursive;
         font-size: map-get($font_size, paragraphes);
@@ -10,7 +10,7 @@
     &__list{
         padding: 0;
         > li{
-            padding: 0.2rem;
+            padding: map-get($map: $padding, $key: footer-list-li);
             > a{
                 color: map-get($map: $colors, $key: color-white);
                 > i{
@@ -22,6 +22,6 @@
         }
     }
     @media screen and (min-width:768px) {
-        padding: 2rem 20%;
+        padding: map-get($map: $padding, $key: boby-responsive);
     }
 }

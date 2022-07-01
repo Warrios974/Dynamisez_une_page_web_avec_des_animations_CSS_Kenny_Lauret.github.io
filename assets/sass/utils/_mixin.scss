@@ -5,10 +5,6 @@
     align-items: center;
 }
 
-@mixin padding_body {
-    padding: 2rem 1.2rem;
-}
-
 @mixin margin_BotTop($value) {
     margin: $value 0;
 }
@@ -20,7 +16,7 @@
 
 @mixin button {
     position: relative;
-    padding: 1.2rem;
+    padding: map-get($map: $padding, $key: button);
     border: none;
     border-radius: map-get($map: $border_radius, $key: button);
 }
@@ -38,10 +34,6 @@
 @mixin animation_hearst($time) {
     opacity: 1;
     transition: all $time;
-}
-
-@mixin responsiveBody {
-    padding: 2rem 20%;
 }
 
 @mixin afterCheckbox {

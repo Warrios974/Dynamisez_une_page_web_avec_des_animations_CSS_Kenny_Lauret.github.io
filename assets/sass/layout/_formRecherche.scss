@@ -1,6 +1,6 @@
 .formRecherche{
     &__description{
-        @include padding_body;
+        padding: map-get($map: $padding, $key: body);
     }
     &__input{
         @include flex(row,wrap);

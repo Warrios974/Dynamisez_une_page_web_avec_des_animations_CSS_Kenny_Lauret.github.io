@@ -19,7 +19,7 @@
         position: relative;
         z-index: 1;
         width: 75%;
-        padding: 1.5rem;
+        padding: map-get($map: $padding, $key: step-contain);
         box-shadow: 0.1em 10px 20px lighten($color: map-get($map: $colors, $key: color-gray), $amount: 50);
         @include choise;
         margin-left: -10px;
