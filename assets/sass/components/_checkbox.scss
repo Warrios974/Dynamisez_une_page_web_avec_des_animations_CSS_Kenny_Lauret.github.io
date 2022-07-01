@@ -28,7 +28,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             display: block;
-            > span{
+            > label{
                 &:first-child{
                     font-weight: bold;
                 }
