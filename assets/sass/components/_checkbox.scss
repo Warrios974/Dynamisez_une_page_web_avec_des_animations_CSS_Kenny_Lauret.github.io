@@ -29,6 +29,7 @@
             white-space: nowrap;
             display: block;
             > label{
+                cursor: pointer;
                 &:first-child{
                     font-weight: bold;
                 }
@@ -41,6 +42,7 @@
             box-sizing: content-box;
             font-weight: bold;
             padding-right: 0.5rem;
+            cursor: pointer;
         }
     }
     &__select{
@@ -55,17 +57,9 @@
             border-radius: 100%;
             background-color: map-get($map: $colors, $key: color-white);
             cursor: pointer;
-            &:checked {
-                padding: map-get($map: $padding, $key: checkbox-checked);
-                &::after {
-                    @include afterCheckbox;
-                }
-            }
-            &:not(:checked) {
-                padding: map-get($map: $padding, $key: checkbox-checked);
-                &::after {
-                    @include afterCheckbox;
-                }
+            padding: map-get($map: $padding, $key: checkbox-checked);
+            &::after {
+                @include afterCheckbox;
             }
         }
     }
