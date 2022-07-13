@@ -4,7 +4,7 @@
     background-color: map-get($map: $colors, $key: color-gray);
     padding: map-get($map: $padding, $key: body);
     &__logo{
-        font-family: 'Shrikhand', cursive;
+        font-family: $font_familly_title;
         font-size: map-get($font_size, paragraphes);
     }
     &__list{

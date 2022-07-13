@@ -7,6 +7,9 @@ $border_radius:(
     button : 2rem,
 );
 
+$font_familly_title: 'Shrikhand' , cursive; 
+$font_familly_paragraphe: 'Roboto', sans-serif; 
+
 $colors :(
     color-primary: #9356DC,
     color-secondary: #FF79DA,
@@ -14,6 +17,7 @@ $colors :(
     color-white: #fff,
     color-gray: rgb(57, 57, 57),
 );
+
 
 $font_size :(
     logo: 2em,
