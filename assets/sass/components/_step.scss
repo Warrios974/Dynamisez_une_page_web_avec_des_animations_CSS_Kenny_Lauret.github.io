@@ -36,6 +36,9 @@
             &::after{
                 opacity: 1;
             }
+            > i{
+                color: map-get($map: $colors, $key: color-primary);
+            }
         }
         &::after{
             @include choise;
