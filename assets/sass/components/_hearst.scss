@@ -16,7 +16,10 @@
             }
         }
         &:last-child{
-            color: map-get($map: $colors, $key: color-primary);
+            @include gradient_button;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
     }
     &--restaurants{
