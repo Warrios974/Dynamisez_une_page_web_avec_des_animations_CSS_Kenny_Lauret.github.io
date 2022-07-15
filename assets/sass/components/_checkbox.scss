@@ -7,7 +7,7 @@
     animation: choise $time_animation 3s ease-in-out both;
     @for $i from 1 through $nombre_choise {
         &--#{$i} {
-            animation-delay: 3s + (100ms * $i);
+            animation-delay: (100ms * $i);
          }
     }
     &__label{
